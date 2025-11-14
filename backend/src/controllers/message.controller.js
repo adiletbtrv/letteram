@@ -37,22 +37,40 @@ export const getMessages = async (req, res) => {
 
 export const sendMessage = async (req, res) => {
   try {
-    const { text, image } = req.body;
+    const { text, image, images } = req.body;
     const { id: receiverId } = req.params;
     const senderId = req.user._id;
 
-    let imageUrl;
+    let imageUrls = [];
+
+    // Support for legacy single image
     if (image) {
-      // Upload base64 image to cloudinary
       const uploadResponse = await cloudinary.uploader.upload(image);
-      imageUrl = uploadResponse.secure_url;
+      imageUrls.push(uploadResponse.secure_url);
+    }
+
+    // Support for multiple images
+    if (images && Array.isArray(images)) {
+      const uploadPromises = images.map(img => 
+        cloudinary.uploader.upload(img, {
+          folder: 'letteram_messages',
+          transformation: [
+            { width: 1000, crop: 'limit' },
+            { quality: 'auto' }
+          ]
+        })
+      );
+      
+      const uploadResults = await Promise.all(uploadPromises);
+      imageUrls.push(...uploadResults.map(result => result.secure_url));
     }
 
     const newMessage = new Message({
       senderId,
       receiverId,
       text,
-      image: imageUrl,
+      image: imageUrls[0] || undefined, // For backward compatibility
+      images: imageUrls.length > 0 ? imageUrls : undefined,
     });
 
     await newMessage.save();

@@ -1,4 +1,6 @@
 export const THEMES = [
+  "letteram_light",
+  "letteram_dark",
   "light",
   "dark",
   "cupcake",
