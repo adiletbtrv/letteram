@@ -34,7 +34,7 @@ const SignUpPage = () => {
 
   return (
     <div className="min-h-screen w-full grid lg:grid-cols-2">
-      {/* Left Side */}
+      {/*Left side*/}
       <div className="flex flex-col justify-center items-center p-3 xs:p-4 sm:p-6 md:p-8 lg:p-6 xl:p-12 bg-base-100 overflow-y-auto h-full">
         <div className="w-full max-w-md space-y-3 xs:space-y-4 sm:space-y-5 lg:space-y-4 xl:space-y-6 my-auto py-2">
           <div className="text-center mt-4 xs:mt-5 sm:mt-6 md:mt-7 lg:mt-8 xl:mt-10">
@@ -56,7 +56,7 @@ const SignUpPage = () => {
           </div>
 
           <form onSubmit={handleSubmit} className="space-y-3 xs:space-y-4 lg:space-y-3 xl:space-y-5">
-            {/* Full Name */}
+            {/*Full Name*/}
             <div className="form-control">
               <label className="label py-0.5 lg:py-0.5">
                 <span className="label-text font-medium text-xs xs:text-sm lg:text-xs xl:text-base">Full Name</span>
@@ -150,7 +150,7 @@ const SignUpPage = () => {
             </button>
           </form>
 
-          {/* Bottom Link */}
+          {/* bottom link */}
           <div className="text-center pt-1 xs:pt-2 lg:pt-1 xl:pt-2">
             <p className="text-xs xs:text-sm lg:text-xs xl:text-base text-base-content/60">
               Already have an account?{" "}

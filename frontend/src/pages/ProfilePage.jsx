@@ -24,13 +24,13 @@ const ProfilePage = () => {
       <div className="max-w-3xl mx-auto p-4 sm:p-6 lg:p-8">
         <div className="bg-base-300 rounded-xl p-6 space-y-8">
 
-          {/* Header */}
+          {/*Header*/}
           <div className="text-center">
             <h1 className="text-2xl sm:text-3xl font-semibold">Profile</h1>
             <p className="mt-2 text-sm sm:text-base">Your profile information</p>
           </div>
 
-          {/* Avatar Upload Section */}
+          {/*Avatar Upload*/}
           <div className="flex flex-col items-center gap-4">
             <div className="relative">
               <img
@@ -64,7 +64,7 @@ const ProfilePage = () => {
             </p>
           </div>
 
-          {/* User Info */}
+          {/*User Info*/}
           <div className="space-y-6">
             <div className="space-y-1.5">
               <div className="text-sm text-zinc-400 flex items-center gap-2">
@@ -83,7 +83,7 @@ const ProfilePage = () => {
             </div>
           </div>
 
-          {/* Account Info */}
+          {/*Acc Info*/}
           <div className="mt-6 bg-base-200 rounded-xl p-6">
             <h2 className="text-lg sm:text-xl font-medium mb-4">Account Information</h2>
             <div className="space-y-3 text-sm sm:text-base">

@@ -43,13 +43,12 @@ export const sendMessage = async (req, res) => {
 
     let imageUrls = [];
 
-    // Support for legacy single image
     if (image) {
       const uploadResponse = await cloudinary.uploader.upload(image);
       imageUrls.push(uploadResponse.secure_url);
     }
 
-    // Support for multiple images
+    //for multiple images
     if (images && Array.isArray(images)) {
       const uploadPromises = images.map(img => 
         cloudinary.uploader.upload(img, {
@@ -69,7 +68,7 @@ export const sendMessage = async (req, res) => {
       senderId,
       receiverId,
       text,
-      image: imageUrls[0] || undefined, // For backward compatibility
+      image: imageUrls[0] || undefined, 
       images: imageUrls.length > 0 ? imageUrls : undefined,
     });
 

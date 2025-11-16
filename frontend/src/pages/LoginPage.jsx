@@ -19,7 +19,7 @@ const LoginPage = () => {
 
   return (
     <div className="min-h-screen w-full grid lg:grid-cols-2">
-      {/* Left Side*/}
+      {/*left side*/}
       <div className="flex flex-col justify-center items-center p-3 xs:p-4 sm:p-6 md:p-8 lg:p-6 xl:p-12 bg-base-100 overflow-y-auto h-full">
         <div className="w-full max-w-md space-y-3 xs:space-y-4 sm:space-y-5 lg:space-y-4 xl:space-y-6 my-auto py-2">
           <div className="text-center">
@@ -111,7 +111,7 @@ const LoginPage = () => {
         </div>
       </div>
 
-      {/* Right Side*/}
+      {/*right side*/}
       <AuthImagePattern
         title="Welcome back to Letteram!"
         subtitle="Sign in to continue your conversations and catch up with your messages."

@@ -12,7 +12,6 @@ const MessageInput = () => {
 
   const MAX_IMAGES = 10;
 
-  // Функция для сжатия изображения
   const compressImage = (file, maxWidth = 1200, quality = 0.8) => {
     return new Promise((resolve, reject) => {
       const reader = new FileReader();
@@ -27,7 +26,6 @@ const MessageInput = () => {
           let width = img.width;
           let height = img.height;
           
-          // Пропорциональное уменьшение если изображение слишком большое
           if (width > maxWidth) {
             height = (height * maxWidth) / width;
             width = maxWidth;
@@ -39,7 +37,6 @@ const MessageInput = () => {
           const ctx = canvas.getContext('2d');
           ctx.drawImage(img, 0, 0, width, height);
           
-          // Конвертируем в base64 с заданным качеством
           const compressedBase64 = canvas.toDataURL('image/jpeg', quality);
           resolve(compressedBase64);
         };
@@ -60,7 +57,6 @@ const MessageInput = () => {
       return;
     }
 
-    // Показываем индикатор загрузки
     const loadingToast = toast.loading('Compressing images...');
 
     try {
@@ -70,7 +66,6 @@ const MessageInput = () => {
           continue;
         }
 
-        // Сжимаем изображение
         const compressedImage = await compressImage(file);
         
         setImagePreviews((prev) => [
@@ -99,13 +94,11 @@ const MessageInput = () => {
     setIsSending(true);
 
     try {
-      // Отправляем сообщение с текстом и всеми изображениями
       await sendMessage({
         text: text.trim(),
         images: imagePreviews.map(img => img.data),
       });
 
-      // Очищаем форму после успешной отправки
       setText("");
       setImagePreviews([]);
       if (fileInputRef.current) fileInputRef.current.value = "";

@@ -1,4 +1,4 @@
-# Full Stack Chat App
+# Letteram
 
 ```js
 MONGODB_URI=...

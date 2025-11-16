@@ -47,7 +47,7 @@ const Sidebar = () => {
           <span className="font-medium hidden lg:block">Contacts</span>
         </div>
 
-        {/* Search Bar */}
+        {/*Searchbar*/}
         <div className="hidden lg:block mb-3">
           <div className="relative">
             <input
@@ -61,7 +61,7 @@ const Sidebar = () => {
           </div>
         </div>
 
-        {/* Online filter toggle */}
+        {/*online filter toggle*/}
         <div className="hidden lg:flex items-center gap-2">
           <label className="cursor-pointer flex items-center gap-2">
             <input
@@ -77,7 +77,7 @@ const Sidebar = () => {
       </div>
 
       <div className="overflow-y-auto w-full py-3">
-        {/* Pinned Contacts */}
+        {/*pinned*/}
         {pinnedContacts.length > 0 && (
           <>
             <div className="px-3 py-2 text-xs font-semibold text-base-content/60 hidden lg:block">
@@ -97,7 +97,7 @@ const Sidebar = () => {
           </>
         )}
 
-        {/* All Contacts */}
+        {/*all contacts*/}
         {unpinnedContacts.length > 0 && pinnedContacts.length > 0 && (
           <div className="px-3 py-2 text-xs font-semibold text-base-content/60 hidden lg:block">
             ALL CONTACTS
