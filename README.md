@@ -5,6 +5,9 @@ A modern web-based messaging platform built with React and Node.js, featuring re
 ![Letteram](https://img.shields.io/badge/version-1.0.0-blue.svg)
 ![License](https://img.shields.io/badge/license-MIT-green.svg)
 
+<img width="1919" height="910" alt="Снимок экрана 2025-11-16 201000" src="https://github.com/user-attachments/assets/01312486-3518-4af7-9ea6-c8d294c808ab" />
+
+
 ## Table of Contents
 
 - [Features](#features)
